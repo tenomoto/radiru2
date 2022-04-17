@@ -5,6 +5,8 @@ A Python script to capture the NHK Radio streaming service (Radiru-Radiru).
 BSD-3-Clause
 
 # Requirements
+
+ - ffmpeg
  - requests
 
 # Usage
