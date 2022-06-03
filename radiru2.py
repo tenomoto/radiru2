@@ -32,7 +32,9 @@ def get_m3u8(site_id):
 
 
 def call_ffmpeg(m3u8, program_name, date):
-    cmd = ["ffmpeg", "-v", "quiet", "-i", m3u8, "-c", "copy", f"{program_name}-{date}.m4a"]
+# ffmpeg < 4.3
+#    cmd = ["ffmpeg", "-v", "quiet", "-i", m3u8, "-c", "copy", f"{program_name}-{date}.m4a"]
+    cmd = ["ffmpeg", "-http_seekable", "0", "-v", "quiet", "-i", m3u8, "-c", "copy", f"{program_name}-{date}.m4a"]
     print(" ".join(cmd))
     status = subprocess.run(cmd)
 #   print(f"return code: {status.returncode}")
