@@ -24,7 +24,7 @@ def get_m3u8(site_id):
         for detail in detail_list:
             file_list = detail["file_list"]
             for file in  file_list:
-                date_list.append(file["open_time"].split("+")[0])
+                date_list.append(file["open_time"].split("+")[0].replace("-","").replace(":",""))
                 file_name_list.append(file["file_name"].split("?")[0])
     file_name_list.reverse()
     date_list.reverse()
